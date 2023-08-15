@@ -5,9 +5,15 @@ def click_fun(event):
     text = event.widget.cget('text')
     pass
     if text == '=':
-        pass
+        if scrvari.get().isdigit():
+            value = int(scrvari.get())
+        else:
+            value = eval(screen.get())
+            scrvari.set(value)
+            scrvari.update()
     elif text == 'C':
-        pass
+        scrvari.set('')
+        scrvari.update()
     else:
         scrvari.set(scrvari.get() + text)
         screen.update()
@@ -36,6 +42,10 @@ button = Button(the_frame, padx=13, pady=11, text='7', font='lucida 25 bold')
 button.pack(side='left', padx=4, pady=4)
 button.bind('<Button-1>', click_fun)
 
+button = Button(the_frame, padx=13, pady=11, text='C', font='lucida 25 bold')
+button.pack(side='left', padx=4, pady=4)
+button.bind('<Button-1>', click_fun)
+
 the_frame = Frame(root, bg='gray')
 the_frame.pack(padx=5, pady=5)
 button.bind('<Button-1>', click_fun)
@@ -49,6 +59,10 @@ button.pack(side='left', padx=4, pady=4)
 button.bind('<Button-1>', click_fun)
 
 button = Button(the_frame, padx=13, pady=11, text='4', font='lucida 25 bold')
+button.pack(side='left', padx=4, pady=4)
+button.bind('<Button-1>', click_fun)
+
+button = Button(the_frame, padx=13, pady=11, text='=', font='lucida 25 bold')
 button.pack(side='left', padx=4, pady=4)
 button.bind('<Button-1>', click_fun)
 
@@ -67,10 +81,40 @@ button = Button(the_frame, padx=13, pady=11, text='1', font='lucida 25 bold')
 button.pack(side='left', padx=4, pady=4)
 button.bind('<Button-1>', click_fun)
 
+button = Button(the_frame, padx=13, pady=11, text='0', font='lucida 25 bold')
+button.pack(side='left', padx=4, pady=4)
+button.bind('<Button-1>', click_fun)
+
 the_frame = Frame(root, bg='gray')
 the_frame.pack(padx=5, pady=5)
 
-button = Button(the_frame, padx=13, pady=11, text='0', font='lucida 25 bold')
+button = Button(the_frame, padx=13, pady=11, text='+', font='lucida 25 bold')
+button.pack(side='left', padx=4, pady=4)
+button.bind('<Button-1>', click_fun)
+
+button = Button(the_frame, padx=13, pady=11, text='-', font='lucida 25 bold')
+button.pack(side='left', padx=4, pady=4)
+button.bind('<Button-1>', click_fun)
+
+button = Button(the_frame, padx=13, pady=11, text='/', font='lucida 25 bold')
+button.pack(side='left', padx=4, pady=4)
+
+button = Button(the_frame, padx=13, pady=11, text='*', font='lucida 25 bold')
+button.pack(side='bottom', padx=4, pady=4)
+button.bind('<Button-1>', click_fun)
+
+the_frame = Frame(root, bg='gray')
+the_frame.pack(padx=5, pady=5)
+
+button = Button(the_frame, padx=13, pady=11, text='(', font='lucida 25 bold')
+button.pack(side='left', padx=4, pady=4)
+button.bind('<Button-1>', click_fun)
+
+button = Button(the_frame, padx=13, pady=11, text=')', font='lucida 25 bold')
+button.pack(side='left', padx=4, pady=4)
+button.bind('<Button-1>', click_fun)
+
+button = Button(the_frame, padx=13, pady=11, text='%', font='lucida 25 bold')
 button.pack(side='left', padx=4, pady=4)
 button.bind('<Button-1>', click_fun)
 
