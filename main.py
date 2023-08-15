@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import *
+import numpy as np
 
 root = Tk()
 
